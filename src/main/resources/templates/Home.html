@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1 >Welcome To ChatGpt</h1>
+    <div class="container">
+        <div class="input-group flex-nowrap">
+            <form action="#" method="post" th:action="@{/chatgpt/create}" th:object="${records}">
+                <input th:field="*{username}" type="text" class="form-control" placeholder="Enter username" aria-label="username" aria-labelledby="addon-wrapping">
+                <br>
+                <input th:field="*{username}" type="text" class="form-control" placeholder="Enter Password" aria-label=" password" aria-labelledby="addon-wrapping">
+                <button class="btn btn-primary" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+<form th:action="@{/chatgpt/get}" method="get">
+    <button  type="submit" class="btn btn-primary">click for all</button>
+
+</form>
+<br>
+<div class="input-group flex-nowrap">
+<form th:action="@{/chatgpt/id}" method="get">
+<input type="text" name="id" placeholder="Enter Id"><br>
+    <button type="submit" class="btn btn-primary">Find By Id</button>
+    <br>
+</form>
+</div>
+<br>
+<div >
+<form th:action="@{/chatgpt/delete/id}" method="get">
+    <input type="text" name="id" placeholder="Enter Id"><br>
+    <button type="submit" class="btn btn-primary">Delete By Id</button>
+
+</form>
+</div>
+</body>
+</html>
